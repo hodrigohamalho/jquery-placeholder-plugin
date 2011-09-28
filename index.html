@@ -1,0 +1,119 @@
+<html>
+	<head>
+		<title>Placeholder jQuery plugin - (Twitter like)</title>
+		<meta name="description" content="A jQuery placeholder plugin like the placeholder used on twitter" />
+		<meta name="keywords" content="jquery, placeholder, plugin, jquery placeholder, jquery plugin, twitter" />
+	
+		<script type="text/javascript" src="jquery.min.js" ></script>
+		<script type="text/javascript" src="placeholder/jquery.placeholder.js" ></script>
+		
+		<link href="index.css" type="text/css" rel="stylesheet" />
+		<link href="placeholder/placeholder.css" type="text/css" rel="stylesheet" />
+	</head>
+	
+	<body>
+
+		<form>
+			<h2> Placeholder jQuery plugin - (Twitter like) </h2> 
+			<div class="blue-box">
+				<div class="holding username">
+					<input type="text" id="username" name="username" />
+					<span class="holder">Email</span>
+				</div>
+			
+				<div class="holding password">
+					<input type="password" id="password" name="username" />
+					<span class="holder">Password</span>
+				</div>
+			</div>
+			<a id="example-source" href="#example-source"> Source code </a>
+			
+			<div id="source-plugin">
+				<pre>
+jQuery(".username").placeholder({
+				color_onfocus: "b9b9b9", 
+				color_background_onfocus: "white"
+				});
+																				
+jQuery(".password").placeholder();
+				</pre>
+			</div>
+			
+			<h2> HTML5 </h2>
+			<div class="blue-box">
+		    <div class="holding">
+		            <input type="text" name="placeholder-native" placeholder="This is native html5" />
+		    </div>
+      </div>
+      <a id="example-html5-source" href="#example-html5-source"> Source code </a>
+      
+      <div id="source-html5">
+      	<pre>
+&lt;input type="text" name="placeholder_native" placeholder="This is native html5" /&gt;
+      	</pre>
+      </div>
+		</form>
+		
+		<h2> Download </h2>
+		<ul>
+			<li>
+				<a href=""> jquery-placeholder-plugin.zip </a> 		
+			</li>
+		</ul>
+		
+		<h2> Github </h2>
+		<ul>
+			<li>
+		Project source: <a href="https://github.com/hodrigohamalho/jquery-placeholder-plugin">https://github.com/hodrigohamalho/jquery-placeholder-plugin</a>
+			</li>
+		</ul>
+		
+		<style type="text/css">
+			body{
+				background: #FFF;
+			}
+
+			#source-plugin, #source-html5{
+				display: none;
+			}
+
+			.blue-box{
+				background-color: #86acbf;
+				padding: 10px 0 10px 20px;
+				width: 330px;
+				-moz-border-radius: 4px;
+				-webkit-border-radius: 4px;
+				border-radius: 4px;
+				-webkit-box-shadow: 0 -1px 0 rgba(0,0,0,.3),inset 0 1px 2px rgba(0,0,0,.2);
+				-moz-box-shadow: 0 -1px 0 rgba(0,0,0,.3),inset 0 1px 2px rgba(0,0,0,.2);
+				box-shadow: 0 -1px 0 rgba(0,0,0,.3),inset 0 1px 2px rgba(0,0,0,.2);
+				margin: 10px
+			}
+		</style>
+		
+		<script type="text/javascript">
+			jQuery(function(){
+				// From placeholder
+				jQuery(".username").placeholder({
+																					color_onfocus: "b9b9b9", 
+																					color_background_onfocus: "white",
+																				});
+																				
+				jQuery(".password").placeholder();				
+				
+				
+				// Geral
+				$("#example-source").click(function(){
+					jQuery("#source-plugin").toggle();
+				});
+
+
+				$("#example-html5-source").click(function(){
+					jQuery("#source-html5").toggle();
+				});
+																
+			});
+		</script>
+	</body>
+</html>
+
