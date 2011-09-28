@@ -4,17 +4,29 @@
 		<meta name="description" content="A jQuery placeholder plugin like the placeholder used on twitter" />
 		<meta name="keywords" content="jquery, placeholder, plugin, jquery placeholder, jquery plugin, twitter" />
 	
-		<script type="text/javascript" src="jquery.min.js" ></script>
-		<script type="text/javascript" src="placeholder/jquery.placeholder.js" ></script>
+		<script type="text/javascript" src="jquery/jquery.min.js" ></script>
+		<script type="text/javascript" src="jquery/jquery-ui-1.8.16.custom.min.js" ></script>
 		
-		<link href="index.css" type="text/css" rel="stylesheet" />
+		<script type="text/javascript" src="placeholder/jquery.placeholder.js" ></script>
+		<script type="text/javascript" src="syntaxhilight/shCore.js" ></script>
+		<script type="text/javascript" src="syntaxhilight/shBrushJScript.js" ></script>
+		<script type="text/javascript" src="syntaxhilight/shBrushXml.js" ></script>
+		
 		<link href="placeholder/placeholder.css" type="text/css" rel="stylesheet" />
+		<link href="syntaxhilight/shCore.css" type="text/css" rel="stylesheet" />
+		<link href="syntaxhilight/shThemeDefault.css" type="text/css" rel="stylesheet" />
+		<link href="jquery/redmond/jquery-ui-1.8.16.custom.css" type="text/css" rel="stylesheet" />
 	</head>
 	
 	<body>
 
+		<div id="topo">
+			<h1><a href="http://jspace.com.br/jquery-placeholder-plugin">Placeholder - Twitter like</a> </h1>
+			<span id="descricao">jQuery plugin</span> 
+		</div>
+		<hr/>
 		<form>
-			<h2> Placeholder jQuery plugin - (Twitter like) </h2> 
+			<h2>Placeholder Plugin</h2>
 			<div class="blue-box">
 				<div class="holding username">
 					<input type="text" id="username" name="username" />
@@ -29,26 +41,49 @@
 			<a id="example-source" href="#example-source"> Source code </a>
 			
 			<div id="source-plugin">
-				<pre>
-jQuery(".username").placeholder({
-				color_onfocus: "b9b9b9", 
-				color_background_onfocus: "white"
-				});
-																				
-jQuery(".password").placeholder();
-				</pre>
-			</div>
-			
+				<div id="tabs">
+					<ul>
+						<li><a href="#tabs-1">HTML</a></li>
+						<li><a href="#tabs-2">Javascript</a></li>
+					</ul>
+					
+					<div id="tabs-1">
+						<pre class="brush: js; html-script: true">
+							<div class="holding username">
+								<input type="text" id="username" name="username" />
+								<span class="holder">Email</span>
+							</div>
+
+							<div class="holding password">
+								<input type="password" id="password" name="username" />
+								<span class="holder">Password</span>
+							</div>
+						</pre>
+					</div>
+					
+					<div id="tabs-2">
+						<pre class="brush: js; html-script: true">
+								jQuery(".username").placeholder({  // The .username is a div class, can be an id too.									
+												color_onfocus: "b9b9b9", 
+												color_background_onfocus: "white"
+												});
+
+								jQuery(".password").placeholder();
+						</pre>
+					</div>
+					
+				</div>
+			</div>	
 			<h2> HTML5 </h2>
 			<div class="blue-box">
 		    <div class="holding">
-		            <input type="text" name="placeholder-native" placeholder="This is native html5" />
+            <input type="text" name="placeholder-native" placeholder="This is native html5" />
 		    </div>
       </div>
       <a id="example-html5-source" href="#example-html5-source"> Source code </a>
       
       <div id="source-html5">
-      	<pre>
+      	<pre class="brush: js; html-script: true">
 &lt;input type="text" name="placeholder_native" placeholder="This is native html5" /&gt;
       	</pre>
       </div>
@@ -57,7 +92,7 @@ jQuery(".password").placeholder();
 		<h2> Download </h2>
 		<ul>
 			<li>
-				<a href=""> jquery-placeholder-plugin.zip </a> 		
+				<a href="/jquery-placeholder-plugin.zip">jquery-placeholder-plugin.zip</a> 		
 			</li>
 		</ul>
 		
@@ -70,13 +105,40 @@ jQuery(".password").placeholder();
 		
 		<style type="text/css">
 			body{
-				background: #FFF;
+				font-family: "Arial", "Helvetica", "Verdana", "sans-serif";
+			}
+			
+			a {
+				color: #5A86E4;
+				text-decoration: none;
+			}
+			
+			h1{
+				display: block;
+				font-size: 2em;
+				-webkit-margin-before: 0.67em;
+				-webkit-margin-after: 0.67em;
+				-webkit-margin-start: 0px;
+				-webkit-margin-end: 0px;
+				font-weight: bold;
 			}
 
+			#topo {
+				width: 100%;
+			}
+
+			#topo h1 {
+				font-weight: bold;
+				font-size: 4em;
+				color: #ADADAD;
+				margin: 0;
+				line-height: 100%;
+			}
+			
 			#source-plugin, #source-html5{
 				display: none;
 			}
-
+	
 			.blue-box{
 				background-color: #86acbf;
 				padding: 10px 0 10px 20px;
@@ -88,6 +150,13 @@ jQuery(".password").placeholder();
 				-moz-box-shadow: 0 -1px 0 rgba(0,0,0,.3),inset 0 1px 2px rgba(0,0,0,.2);
 				box-shadow: 0 -1px 0 rgba(0,0,0,.3),inset 0 1px 2px rgba(0,0,0,.2);
 				margin: 10px
+			}
+			
+			#descricao {
+				text-align: right;
+				padding-left: 650px;
+				font-weight: bold;
+				color: ;
 			}
 		</style>
 		
@@ -111,7 +180,11 @@ jQuery(".password").placeholder();
 				$("#example-html5-source").click(function(){
 					jQuery("#source-html5").toggle();
 				});
-																
+				
+				SyntaxHighlighter.all()
+				
+				$("#tabs" ).tabs();
+					
 			});
 		</script>
 	</body>
